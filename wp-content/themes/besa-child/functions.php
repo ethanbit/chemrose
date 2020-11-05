@@ -388,8 +388,24 @@ function dh_woocommerce_before_cart(){
     }
 }
 
+add_action('wp_enqueue_scripts', function () {
+  if (class_exists('woocommerce')) {
+    wp_dequeue_style('selectWoo');
+    wp_deregister_style('selectWoo');
+    wp_dequeue_script('selectWoo');
+    wp_deregister_script('selectWoo');
+  }
+});
 
-
+// add_filter( 'woocommerce_form_field_args' , 'misha_print_all_fields', 500, 1 ); 
+// function misha_print_all_fields( $fields ) { 
+//   echo "<!-- Ducnb <pre>"; print_r($fields); echo "</pre>".__FILE__.": ".__LINE__."--> ";
+//   if($fields['id'] == 'billing_city'){
+//     $fields['label'] = 'City';
+//   }
+ 
+// 	return $fields;
+// }
 
 
 
