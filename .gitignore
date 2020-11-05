@@ -7,3 +7,5 @@ wp-content/wflogs
 wp-content/plugins/airplane-mode-master
 old
 wp-config.php
+wp-content/wflogs/config-synced.php
+wp-content/wflogs/config.php

@@ -121,7 +121,9 @@ ul.woocommerce-categories h3 {
   border-radius: 3px;
 }
 
-.ducnb {
+.form_option_billing,
+.form_option_shipping {
+  border: none;
 }
 
 @media (min-width: 992px) {
