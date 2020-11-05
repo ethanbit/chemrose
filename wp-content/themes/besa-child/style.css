@@ -126,6 +126,20 @@ ul.woocommerce-categories h3 {
   border: none;
 }
 
+.besa-ajax-search.searchform {
+  border: 1px solid #f5f5f5;
+}
+
+#minorder a.btn-warning {
+  color: #fff;
+}
+
+#minorder button.btn-secondary {
+  background: #f5f5f5;
+  border: 1px solid #f5f5f5;
+  color: #000;
+}
+
 @media (min-width: 992px) {
   ul.woocommerce-categories .col-lg-3 {
     -ms-flex: 0 0 25%;

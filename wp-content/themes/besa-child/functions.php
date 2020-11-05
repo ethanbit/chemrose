@@ -13,13 +13,20 @@ add_action('wp_enqueue_scripts', 'besa_child_enqueue_styles', 10000);
 function besa_child_enqueue_styles() {
 	$parent_style = 'besa-style';
 	wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'besa-child-style',
-        get_stylesheet_directory_uri() . '/style.css',
-        array( $parent_style ),
-        wp_get_theme()->get('Version')
-    );
+  wp_enqueue_style( 'besa-child-style',
+      get_stylesheet_directory_uri() . '/style.css',
+      array( $parent_style ),
+      wp_get_theme()->get('Version')
+  );
+  wp_enqueue_script( 'custom_script',  get_stylesheet_directory_uri() . '/js/custom.js' , array(), '1.0', true);
 }
 
+function my_custom_js() {
+    echo '<script type="text/javascript">
+    var logoutUrl = "'.home_url().'?customer-logout=true"
+    </script>';
+}
+add_action( 'wp_head', 'my_custom_js' );
 
 function change_role_name() {
     global $wp_roles;
@@ -370,16 +377,13 @@ function dh_woocommerce_before_cart(){
         <div class="modal fade" id="minorder" tabindex="-1" role="dialog" aria-labelledby="minorderModalLabel" aria-hidden="false">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="minorderModalLabel">Oop...</h5>
-                </div>
-                <div class="modal-body">
-                    Please note that the minimum order value is $250.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a href="<?php echo wc_get_page_permalink( 'shop' ); ?>" class="btn btn-primary">Continue Shopping</a>
-                </div>
+                  <div class="modal-body">
+                      Please note that the minimum order value is $250.
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <a href="<?php echo wc_get_page_permalink( 'shop' ); ?>" class="btn btn-warning">Continue Shopping</a>
+                  </div>
                 </div>
             </div>
         </div>
