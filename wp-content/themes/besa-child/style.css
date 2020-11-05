@@ -1,0 +1,146 @@
+/*
+Theme Name: Besa Child
+Theme URI: https://elementor.thembay.com/besa/
+Author: Thembay
+Description: This is a child theme for Besa
+Version: 1.0
+Author URI: https://thembay.com/
+Template: besa
+Text Domain: besa-child
+*/
+
+/*  [ Add your custom css below ]
+- - - - - - - - - - - - - - - - - - - - */
+
+.all-subcategories>li {
+    float: left;
+    width: 25%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.all-subcategories h3 .count{
+    display:none;
+}
+.all-subcategories {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+.post-type-archive .tbay-filter,.post-type-archive .display-products {
+    display:none;
+}
+/*------------------------*/
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    width:100%;
+}
+form .col-12 {
+    clear: both;
+}
+form .col-12 {
+    clear: both;
+}
+.col-12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.shop-area #load_products_form ul {
+    margin: 0 0 1em;
+    padding: 25px;
+    list-style: none;
+    clear: both;
+    background: #fff;
+    /* float: left; */
+    display: flex;
+    flex-direction: row !important;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.flex-column {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+}
+ul.woocommerce-categories{
+    width:100%;
+}
+ul.woocommerce-categories li {
+    padding: 0px;
+    /* float: left; */
+    list-style: none;
+    margin: 10px;
+    float: left;
+}
+ul.woocommerce-categories img{
+    width:100%;
+}
+ul.woocommerce-categories h3 {
+    padding: 0 20px;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0px !important;
+    text-transform: capitalize;
+    line-height: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.search-results.post-type-archive .display-products {
+  display: block;
+}
+
+.wc-proceed-to-checkout i,
+.mini_cart_content i {
+  color: red;
+  display: block;
+}
+
+.wc-proceed-to-checkout span.button.checkout,
+.mini_cart_content span.button.checkout {
+  display: block;
+  width: 100%;
+  background: lightgray;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  padding: 8px 0px;
+  border-radius: 3px;
+}
+
+@media (min-width: 992px){
+ul.woocommerce-categories .col-lg-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 23%;
+}
+.col-lg-12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+}
+@media (max-width: 736px){
+    .all-subcategories>li {
+    float: left;
+    width: 50%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+}
