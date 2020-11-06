@@ -31,6 +31,12 @@ Text Domain: besa-child
 .post-type-archive .display-products {
   display: none;
 }
+.archive-full .display-products.products.products-list{
+    width:100%;
+}
+#billing_last_name_field .woocommerce-input-wrapper,#billing_first_name_field .woocommerce-input-wrapper{
+    width:100%;
+}
 /*------------------------*/
 .row {
   display: -webkit-box;

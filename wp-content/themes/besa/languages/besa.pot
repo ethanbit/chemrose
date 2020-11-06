@@ -27,7 +27,8 @@ msgstr ""
 
 #: 404.php:24
 msgid ""
-"We’re very sorry but the page you are looking for doesn’t exist or has been moved.\n"
+"We’re very sorry but the page you are looking for doesn’t exist or has been moved.
+\n"
 "				 Please back to"
 msgstr ""
 
@@ -5717,7 +5718,7 @@ msgid "Remove"
 msgstr ""
 
 #: woocommerce/wishlist-view.php:255
-msgid "No products added to the wishlist"
+msgid "No products added to the favourites"
 msgstr ""
 
 #: woocommerce/yith-wfbt-form.php:92

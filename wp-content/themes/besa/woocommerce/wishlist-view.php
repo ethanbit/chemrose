@@ -252,7 +252,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
         endforeach;
     else: ?>
         <tr class="no-products">
-            <td colspan="<?php echo esc_attr( $column_count ) ?>" class="wishlist-empty"><?php echo apply_filters( 'yith_wcwl_no_product_to_remove_message', esc_html__( 'No products added to the wishlist', 'besa' ) ) ?></td>
+            <td colspan="<?php echo esc_attr( $column_count ) ?>" class="wishlist-empty"><?php echo apply_filters( 'yith_wcwl_no_product_to_remove_message', esc_html__( 'No products added to the favourites', 'besa' ) ) ?></td>
         </tr>
     <?php
     endif;

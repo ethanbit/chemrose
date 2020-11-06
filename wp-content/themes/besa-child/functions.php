@@ -411,7 +411,82 @@ add_action('wp_enqueue_scripts', function () {
 // 	return $fields;
 // }
 
-
+add_filter('woocommerce_default_address_fields', 'hd_woocommerce_default_address_fields', 500,1);
+function hd_woocommerce_default_address_fields($fields){
+    $fields = array(
+		'first_name' => array(
+			'label'        => __( 'First name', 'woocommerce' ),
+			'required'     => true,
+			'class'        => array( 'form-row-first' ),
+			'autocomplete' => 'given-name',
+			'priority'     => 10,
+		),
+		'last_name'  => array(
+			'label'        => __( 'Last name', 'woocommerce' ),
+			'required'     => true,
+			'class'        => array( 'form-row-last' ),
+			'autocomplete' => 'family-name',
+			'priority'     => 20,
+		),
+		'company'    => array(
+			'label'        => __( 'Company name', 'woocommerce' ),
+			'class'        => array( 'form-row-wide' ),
+			'autocomplete' => 'organization',
+			'priority'     => 30,
+			'required'     => 'required' === get_option( 'woocommerce_checkout_company_field', 'optional' ),
+		),
+		'country'    => array(
+			'type'         => 'country',
+			'label'        => __( '', 'woocommerce' ),
+			'required'     => true,
+			'class'        => array( 'form-row-wide', 'address-field', 'update_totals_on_change' ),
+			'autocomplete' => 'country',
+			'priority'     => 40,
+		),
+		'address_1'  => array(
+			'label'        => __( 'Street address', 'woocommerce' ),
+			/* translators: use local order of street name and house number. */
+			'placeholder'  => esc_attr__( 'Unit number and street name', 'woocommerce' ),
+			'required'     => true,
+			'class'        => array( 'form-row-wide', 'address-field' ),
+			'autocomplete' => 'address-line1',
+			'priority'     => 50,
+		),
+		'address_2'  => array(
+			'placeholder'  => esc_attr( $address_2_placeholder ),
+			'class'        => array( 'form-row-wide', 'address-field' ),
+			'autocomplete' => 'address-line2',
+			'priority'     => 60,
+			'required'     => 'required' === get_option( 'woocommerce_checkout_address_2_field', 'optional' ),
+		),
+		'city'       => array(
+			'label'        => __( 'City', 'woocommerce' ),
+			'required'     => true,
+			'class'        => array( 'form-row-wide', 'address-field' ),
+			'autocomplete' => 'address-level2',
+			'priority'     => 70,
+		),
+		'state'      => array(
+			'type'         => 'state',
+			'label'        => __( 'State', 'woocommerce' ),
+			'required'     => true,
+			'class'        => array( 'form-row-wide', 'address-field' ),
+			'validate'     => array( 'state' ),
+			'autocomplete' => 'address-level1',
+			'priority'     => 80,
+		),
+		'postcode'   => array(
+			'label'        => __( 'Postcode', 'woocommerce' ),
+			'required'     => true,
+			'class'        => array( 'form-row-wide', 'address-field' ),
+			'validate'     => array( 'postcode' ),
+			'autocomplete' => 'postal-code',
+			'priority'     => 90,
+		),
+	);
+	
+    return $fields;
+}
 
 
 
