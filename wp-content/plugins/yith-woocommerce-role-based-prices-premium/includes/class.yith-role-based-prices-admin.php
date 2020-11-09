@@ -63,6 +63,9 @@ if ( !class_exists( ' YITH_Role_Based_Prices_Admin' ) ) {
          */
         public function include_admin_script()
         {
+            global $pagenow;
+            
+
             if ( !isset( $_GET[ 'post' ] ) )
                 global $post;
             else
@@ -73,8 +76,10 @@ if ( !class_exists( ' YITH_Role_Based_Prices_Admin' ) ) {
 
             wp_enqueue_script( 'ywcrbp_admin', YWCRBP_ASSETS_URL . 'js/ywcrbp_admin' . $suffix . '.js', array( 'jquery' ), YWCRBP_VERSION );
             wp_enqueue_script( 'wc-enhanced-select' );
-
-            wp_enqueue_script( 'woocommerce_admin', WC()->plugin_url() . '/assets/js/admin/woocommerce_admin' . $suffix . '.js', array( 'jquery', 'jquery-blockui', 'jquery-ui-sortable', 'jquery-ui-widget', 'jquery-ui-core', 'jquery-tiptip' ), WC_VERSION );
+            
+            if($pagenow != 'user-new.php' ){
+                wp_enqueue_script( 'woocommerce_admin', WC()->plugin_url() . '/assets/js/admin/woocommerce_admin' . $suffix . '.js', array( 'jquery', 'jquery-blockui', 'jquery-ui-sortable', 'jquery-ui-widget', 'jquery-ui-core', 'jquery-tiptip' ), WC_VERSION );
+            }
 
             $locale  = localeconv();
             $decimal = isset( $locale['decimal_point'] ) ? $locale['decimal_point'] : '.';

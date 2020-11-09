@@ -320,12 +320,6 @@ function besa_tbay_autocomplete_suggestions()
   die();
 }
 
-add_filter( 'posts_search', 'search_by_id_only', 500, 2 );
-function search_by_id_only(){
-    return;
-}
-
-
 // check User Role and require min oder
 add_filter('dh_woo_checkout_btn', 'dh_woo_checkout_btn', 500, 1);
 function dh_woo_checkout_btn($checkoutBtn){
