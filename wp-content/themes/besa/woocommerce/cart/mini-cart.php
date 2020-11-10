@@ -27,7 +27,7 @@ $_id = besa_tbay_random_key();
 	<div class="mini_cart_inner">
 		<div class="mcart-border">
 			<?php if(sizeof(WC()->cart->get_cart()) > 0) : ?>
-				<ul class="cart_list product_list_widget <?php echo esc_attr($args['list_class']); ?>">
+				<ul class="234234 cart_list product_list_widget <?php echo esc_attr($args['list_class']); ?>">
 					<?php
           			do_action( 'woocommerce_before_mini_cart_contents' );
 

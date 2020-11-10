@@ -27,7 +27,7 @@ $_id = besa_tbay_random_key();
 	<div class="mini_cart_inner">
 		<div class="mcart-border">
 			<?php if(sizeof(WC()->cart->get_cart()) > 0) : ?>
-				<ul class="cart_list product_list_widget <?php echo esc_attr($args['list_class']); ?>">
+				<ul class="123123 cart_list product_list_widget <?php echo esc_attr($args['list_class']); ?>">
 					<?php
           			do_action( 'woocommerce_before_mini_cart_contents' );
 
@@ -60,7 +60,9 @@ $_id = besa_tbay_random_key();
 									<div class="group">
 										<?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
 										<span class="quantity">
-											<?php echo apply_filters('woocommerce_widget_cart_item_quantity',  sprintf('%s', $cart_item['quantity']) , $cart_item, $cart_item_key); ?>x
+											<?php //echo apply_filters('woocommerce_widget_cart_item_quantity',  sprintf('%s', $cart_item['quantity']) , $cart_item, $cart_item_key); ?>
+											<input name="" value="<?php echo $cart_item['quantity'] ?>"  />
+											x
 										</span>
 										<?php echo apply_filters('woocommerce_widget_cart_item_quantity',  sprintf('%s', $product_price) , $cart_item, $cart_item_key); ?>
 									</div>
