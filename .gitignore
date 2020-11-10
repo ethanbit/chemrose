@@ -9,4 +9,5 @@ old
 wp-config.php
 wp-content/wflogs/config-synced.php
 wp-content/wflogs/config.php
+./.htaccess
 .htaccess
