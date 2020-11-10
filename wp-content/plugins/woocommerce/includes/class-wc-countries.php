@@ -679,7 +679,7 @@ class WC_Countries {
 			),
 			'country'    => array(
 				'type'         => 'country',
-				'label'        => __( '', 'woocommerce' ),
+				'label'        => __( 'Country / Region', 'woocommerce' ),
 				'required'     => true,
 				'class'        => array( 'form-row-wide', 'address-field', 'update_totals_on_change' ),
 				'autocomplete' => 'country',
@@ -688,7 +688,7 @@ class WC_Countries {
 			'address_1'  => array(
 				'label'        => __( 'Street address', 'woocommerce' ),
 				/* translators: use local order of street name and house number. */
-				'placeholder'  => esc_attr__( 'Unit number and street name', 'woocommerce' ),
+				'placeholder'  => esc_attr__( 'House number and street name', 'woocommerce' ),
 				'required'     => true,
 				'class'        => array( 'form-row-wide', 'address-field' ),
 				'autocomplete' => 'address-line1',
@@ -710,7 +710,7 @@ class WC_Countries {
 			),
 			'state'      => array(
 				'type'         => 'state',
-				'label'        => __( 'State', 'woocommerce' ),
+				'label'        => __( 'State / County', 'woocommerce' ),
 				'required'     => true,
 				'class'        => array( 'form-row-wide', 'address-field' ),
 				'validate'     => array( 'state' ),
@@ -718,7 +718,7 @@ class WC_Countries {
 				'priority'     => 80,
 			),
 			'postcode'   => array(
-				'label'        => __( 'Postcode', 'woocommerce' ),
+				'label'        => __( 'Postcode / ZIP', 'woocommerce' ),
 				'required'     => true,
 				'class'        => array( 'form-row-wide', 'address-field' ),
 				'validate'     => array( 'postcode' ),

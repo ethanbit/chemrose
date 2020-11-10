@@ -50,7 +50,7 @@ global $product;
 					<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 
 					<?php 
-						besa_the_yith_wishlist();
+						//besa_the_yith_wishlist();
 						besa_the_quick_view($product->get_id());
 						besa_the_yith_compare($product->get_id());
 					?>
@@ -62,25 +62,30 @@ global $product;
 				<?php 
 					do_action('besa_woo_before_shop_list_caption');
 				?>
-				<?php besa_the_product_name(); ?>
+				<div class="product_name"><?php besa_the_product_name(); ?>
 
-				<?php
-					/**
-					* besa_woo_list_caption_left hook
-					*
-					* @hooked woocommerce_template_loop_rating - 5
-					*/
-					do_action( 'besa_woo_list_caption_left');
-				?>
-
+			
+                <div class="Woo_sku">
+                    <?php  echo $product->get_sku(); ?>
+                </div>
+                </div>
 				<div class="woocommerce-product-details__short-description">
-	           		<?php echo get_the_excerpt(); ?>
+	           		<?php //echo get_the_excerpt(); ?>
 	           	</div>
 	           	<?php
 					do_action( 'besa_woo_list_after_short_description');
 				?>
 	        </div>
 	        <div class="caption-right offset-lg-1">
+	            	<?php
+					/**
+					* besa_woo_list_caption_left hook
+					*
+					* @hooked woocommerce_template_loop_rating - 6
+					*/
+					do_action( 'besa_woo_list_caption_left');
+					
+				?>
 	        	<?php
 					/**
 					* besa_woo_list_caption_right hook

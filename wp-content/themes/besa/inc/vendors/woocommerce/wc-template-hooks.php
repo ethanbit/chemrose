@@ -86,6 +86,6 @@ add_action( 'besa_woo_before_shop_loop_item_caption', 'besa_woocommerce_quantity
  */
 
 add_action( 'besa_woo_list_caption_left', 'woocommerce_template_loop_rating', 5 );
-add_action( 'besa_woo_list_caption_right', 'woocommerce_template_loop_price', 5 );
+add_action( 'besa_woo_list_caption_right', 'woocommerce_template_loop_price', 1 );
 add_action( 'besa_woo_list_caption_right', 'besa_tbay_total_stock', 10 );
 add_action( 'besa_woo_list_caption_right', 'besa_woocommerce_quantity_mode_group_button', 20);

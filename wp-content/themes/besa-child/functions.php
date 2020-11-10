@@ -46,8 +46,8 @@ add_action('init', 'change_role_name');
 
 /* Create Staff Member User Role */
 add_role(
-    'role_a', //  System name of the role.
-    __( 'Role A'  ), // Display name of the role.
+    'business_a', //  System name of the role.
+    __( 'Business A'  ), // Display name of the role.
     array(
         'read'  => true,
         'delete_posts'  => true,
@@ -62,8 +62,8 @@ add_role(
     )
 );
 add_role(
-    'role_b', //  System name of the role.
-    __( 'Role B'  ), // Display name of the role.
+    'business_b', //  System name of the role.
+    __( 'Business B'  ), // Display name of the role.
     array(
         'read'  => true,
         'delete_posts'  => true,
@@ -78,8 +78,8 @@ add_role(
     )
 );
 add_role(
-    'role_c', //  System name of the role.
-    __( 'Role C'  ), // Display name of the role.
+    'business_c', //  System name of the role.
+    __( 'Business C'  ), // Display name of the role.
     array(
         'read'  => true,
         'delete_posts'  => true,
@@ -320,6 +320,12 @@ function besa_tbay_autocomplete_suggestions()
   die();
 }
 
+add_filter( 'posts_search', 'search_by_id_only', 500, 2 );
+function search_by_id_only(){
+    return;
+}
+
+
 // check User Role and require min oder
 add_filter('dh_woo_checkout_btn', 'dh_woo_checkout_btn', 500, 1);
 function dh_woo_checkout_btn($checkoutBtn){
@@ -482,9 +488,10 @@ function hd_woocommerce_default_address_fields($fields){
     return $fields;
 }
 
-
-
-
+/* add_action( 'besa_woo_list_caption_right', 'besa_the_yith_wishlist_test', 7 );
+function besa_the_yith_wishlist_test() {
+		besa_the_yith_wishlist();
+	} */
 
 
 

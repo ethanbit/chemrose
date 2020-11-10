@@ -72,7 +72,7 @@ global $product;
 					*/
 					do_action( 'besa_woo_list_caption_left');
 				?>
-
+                
 				<div class="woocommerce-product-details__short-description">
 	           		<?php echo get_the_excerpt(); ?>
 	           	</div>
