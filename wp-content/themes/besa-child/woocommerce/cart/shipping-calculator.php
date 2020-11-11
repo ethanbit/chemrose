@@ -37,6 +37,10 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 				</select>
 			</p>
 		<?php endif; ?>
+		
+		<p class="form-row form-row-wide" id="calc_shipping_address_field">
+			<input type="text" name="calc_shipping_address" value="<?php echo esc_attr( WC()->customer->get_shipping_address() ); ?>" />
+		</p>
 
 		<?php if ( apply_filters( 'woocommerce_shipping_calculator_enable_state', true ) ) : ?>
 			<p class="form-row form-row-wide" id="calc_shipping_state_field">

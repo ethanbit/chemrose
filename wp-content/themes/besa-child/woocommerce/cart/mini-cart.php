@@ -60,8 +60,10 @@ $_id = besa_tbay_random_key();
 									<div class="group">
 										<?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
 										<span class="quantity">
-											<?php //echo apply_filters('woocommerce_widget_cart_item_quantity',  sprintf('%s', $cart_item['quantity']) , $cart_item, $cart_item_key); ?>
-											<input name="" value="<?php echo $cart_item['quantity'] ?>"  />
+											<?php 
+											//echo apply_filters('woocommerce_widget_cart_item_quantity',  sprintf('%s', $cart_item['quantity']) , $cart_item, $cart_item_key); 
+											?>
+											<input class="mini_qty" type="text" name="min_qty_<?php echo $cart_item['product_id'] ?>" value="<?php echo $cart_item['quantity'] ?>" data-productid="<?php echo $cart_item['product_id'] ?>" data-cartkey="<?php echo $cart_item['key'] ?>" />
 											x
 										</span>
 										<?php echo apply_filters('woocommerce_widget_cart_item_quantity',  sprintf('%s', $product_price) , $cart_item, $cart_item_key); ?>

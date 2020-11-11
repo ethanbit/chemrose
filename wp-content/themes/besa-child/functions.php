@@ -493,6 +493,34 @@ function besa_the_yith_wishlist_test() {
 		besa_the_yith_wishlist();
 	} */
 
+function update_item_from_cart() {
+  $cart_item_key = $_POST['cart_item_key'];   
+  $quantity = $_POST['qty'];     
 
+  // Get mini cart
+  ob_start();
 
+  foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item)
+  {
+    if( $cart_item_key == $_POST['cart_item_key'] )
+    {
+      WC()->cart->set_quantity( $cart_item_key, $quantity, $refresh_totals = true );
+    }
+  }
+  WC()->cart->calculate_totals();
+  WC()->cart->maybe_set_cart_cookies();
+  return true;
+}
 
+add_action('wp_ajax_update_item_from_cart', 'update_item_from_cart');
+add_action('wp_ajax_nopriv_update_item_from_cart', 'update_item_from_cart');
+
+add_action('woocommerce_calculated_shipping', 'dh_woocommerce_calculated_shipping');
+function dh_woocommerce_calculated_shipping(){
+  //echo "<pre>_POST"; print_r($_POST); echo "</pre>".__FILE__.": ".__LINE__."";
+  $address['address'] = isset( $_POST['calc_shipping_address'] ) ? wc_clean( wp_unslash( $_POST['calc_shipping_address'] ) ) : ''; // WPCS: input var ok, CSRF ok, sanitization ok.
+
+  WC()->customer->set_shipping_address( $address['address'] );
+  WC()->customer->set_calculated_shipping( true );
+  WC()->customer->save();
+}
