@@ -126,7 +126,7 @@ if (!class_exists('OCWMA_front')) {
               <span><?php echo $user_data['shipping_address_2'] ?></span>
             </p>
             <p>
-              <span><?php echo $user_data['shipping_city'].' '.$user_data['shipping_state'].' '.$user_data['shipping_postcode'].' '.$user_data['shipping_country']  ?></span>
+              <span><?php echo $user_data['shipping_city'].' '.$user_data['shipping_state'].' '.$user_data['shipping_postcode'] ?></span>
             </p>
             <!-- <p>
               <span><?php echo $user_data['shipping_country'] ?></span>
