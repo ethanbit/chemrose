@@ -11,7 +11,12 @@ Text Domain: besa-child
 
 /*  [ Add your custom css below ]
 - - - - - - - - - - - - - - - - - - - - */
-
+.woocommerce-billing-fields #billing_country_field,
+.woocommerce-MyAccount-content #billing_country,
+#billing_country_field,
+#shipping_country_field {
+	display: none;
+}
 .all-subcategories > li {
 	float: left;
 	width: 25%;
@@ -298,6 +303,9 @@ button:focus {
 	}
 }
 @media (max-width: 1024px) {
+	.archive-shop > .tbay-filter .woocommerce-ordering {
+		display: none;
+	}
 	.products-list .button-wishlist {
 		float: left;
 		text-align: center;
