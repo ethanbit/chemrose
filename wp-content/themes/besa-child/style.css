@@ -14,8 +14,14 @@ Text Domain: besa-child
 .woocommerce-billing-fields #billing_country_field,
 .woocommerce-MyAccount-content #billing_country,
 #billing_country_field,
-#shipping_country_field {
-	display: none;
+#shipping_country_field,#billing_country_field {
+	display: none!important;
+}
+form.checkout #my_custom_checkout_field  h3{
+	    margin: 20px 0 10px;
+}
+.yith-wcwl-add-button span span{
+    display: none !important;
 }
 .all-subcategories > li {
 	float: left;
@@ -31,13 +37,15 @@ Text Domain: besa-child
 	cursor: pointer;
 	margin-bottom: 20px;
 }
+#shop-now.has-buy-now .tbay-buy-now.button{
+	display:none!important;
+}
 .all-subcategories {
 	list-style: none;
 	padding: 0;
 	margin-top: 15px;
 }
 .post-type-archive .tbay-filter,
-.post-type-archive .display-products,
 .product-stock-status {
 	display: none;
 }
@@ -57,6 +65,57 @@ Text Domain: besa-child
 }
 button:focus {
 	outline: 0px auto -webkit-focus-ring-color;
+}
+.products.products-list .product-category {
+    width: 14.9%;
+    margin: 10px;
+}
+.products.products-list .product-category.product h3{
+	font-size:18px;
+}
+.product .count {
+	display: none;
+}
+.woocommerce.widget_product_categories h5{
+	background: #262262;
+    color: #fff;
+    margin-bottom: 0;
+    padding: 20px 25px;
+    border-radius: 5px 5px 0 0;
+    text-transform: capitalize;
+    font-size: 15px;
+    font-weight: 400;
+}
+.woocommerce.widget_product_categories ul{
+	    margin: 0 0 1em;
+    padding: 25px!important;
+    list-style: none;
+    clear: both;
+    background: #fff;
+    display: flex;
+    flex-direction: row !important;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.woocommerce.widget_product_categories ul li{
+	float: left;
+    width: 100%;
+    box-shadow: none;
+    background: transparent;
+    border: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid rgba(0,0,0, 0.1);
+}
+.woocommerce.widget_product_categories ul li a{
+	color: #404041;
+    padding: 5px 0;
+    font-size: 14px;
+    text-transform: capitalize;
+    float: left;
+    display: block;
+    white-space: initial;
 }
 /*------------------------*/
 .product-quantity-mode .product-block.list .quantity {
@@ -303,6 +362,10 @@ button:focus {
 	}
 }
 @media (max-width: 1024px) {
+.products.products-list .product-category {
+    width: 14.5%;
+    margin: 10px;
+}
 	.archive-shop > .tbay-filter .woocommerce-ordering {
 		display: none;
 	}
@@ -334,6 +397,10 @@ button:focus {
 	}
 }
 @media (max-width: 768px) {
+.products.products-list .product-category {
+    width: 13.8%;
+    margin: 10px;
+}
 	.products-list .caption-right {
 		flex: 0 0 100.33333%;
 		max-width: 100.33333%;
@@ -362,6 +429,10 @@ button:focus {
 	}
 }
 @media (max-width: 736px) {
+.products.products-list .product-category {
+    width: 47%;
+    margin: 10px;
+}
 	.products-list .caption-right .price {
 		text-align: left;
 	}
@@ -388,8 +459,17 @@ button:focus {
 		text-align: center;
 	}
 }
-
+@media (max-width: 667px){
+	.products.products-list .product-category {
+    width: 46%;
+    margin: 10px;
+}
+}
 @media (max-width: 480px) {
+.products.products-list .product-category {
+    width: 45%;
+    margin: 10px;
+}
 	.product-quantity-mode .product-block.list .add-cart a {
 		margin: 10px 0;
 	}
@@ -399,4 +479,17 @@ button:focus {
 	.products-list .caption-right .price {
 		text-align: left;
 	}
+}
+
+@media (max-width: 414px){
+	.products.products-list .product-category {
+    width: 44%;
+    margin: 10px;
+}
+}
+@media (max-width: 320px){
+	.products.products-list .product-category {
+    width: 100%;
+    margin: 10px;
+}
 }

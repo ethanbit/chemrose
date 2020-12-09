@@ -488,10 +488,10 @@ function hd_woocommerce_default_address_fields($fields){
     return $fields;
 }
 
-/* add_action( 'besa_woo_list_caption_right', 'besa_the_yith_wishlist_test', 7 );
+ add_action( 'besa_woo_list_caption_right', 'besa_the_yith_wishlist_test', 7 );
 function besa_the_yith_wishlist_test() {
 		besa_the_yith_wishlist();
-	} */
+	} 
 
 function update_item_from_cart() {
   $cart_item_key = $_POST['cart_item_key'];   

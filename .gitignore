@@ -5,6 +5,7 @@ wp-content/uploads
 wp-content/wphb*
 wp-content/wflogs*
 wp-content/wflogs__
+wp-content/themes/twentytwenty
 wp-content/plugins/airplane-mode-master
 old
 wp-config.php
