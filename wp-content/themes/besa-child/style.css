@@ -382,6 +382,11 @@ button:focus {
 	border-collapse: collapse;
 }
 
+.loopwishlist .elementor-widget-wrap {
+	align-content: start !important;
+	align-items: start !important;
+}
+
 @media (min-width: 992px) {
 	.products-list .offset-lg-1 {
 		margin-left: 2.333333%;
