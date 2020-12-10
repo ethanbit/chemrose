@@ -15,3 +15,8 @@ wp-config.php
 devchemr_chemrose.sql.gz
 wp-content/wflogs/.htaccess
 wp-content/wflogs/attack-data.php
+wp-content/wflogs/config-livewaf.php
+wp-content/wflogs/config-synced.php
+wp-content/wflogs/config.php
+wp-content/wflogs/rules.php
+wp-content/wflogs/template.php
