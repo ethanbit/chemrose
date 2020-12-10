@@ -42,25 +42,7 @@ $calculator_text          = '';
 					</li>
 				<?php endforeach; ?>
 			</ul>
-			<?php if ( is_cart() ) : ?>
-				<p class="woocommerce-shipping-destination">
-					<?php
-					if ( $formatted_destination ) {
-						// Translators: $s shipping destination.
-						$country = WC()->customer->get_shipping_country();
-						$state = WC()->customer->get_shipping_state();
-						$city = WC()->customer->get_shipping_city();
-						$postcode = WC()->customer->get_shipping_postcode();
-						$address = WC()->customer->get_shipping_address();
-						//printf( esc_html__( 'Shipping to %s.', 'woocommerce' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' );
-						echo "Shipping to : <strong>$address, $city, $state, $postcode, $country</strong>";
-						$calculator_text = esc_html__( 'Change address', 'woocommerce' );
-					} else {
-						echo wp_kses_post( apply_filters( 'woocommerce_shipping_estimate_html', __( 'Shipping options will be updated during checkout.', 'woocommerce' ) ) );
-					}
-					?>
-				</p>
-			<?php endif; ?>
+			
 			<?php
 		elseif ( ! $has_calculated_shipping || ! $formatted_destination ) :
 			if ( is_cart() && 'no' === get_option( 'woocommerce_enable_shipping_calc' ) ) {
@@ -77,12 +59,44 @@ $calculator_text          = '';
 		endif;
 		?>
 
-		<?php if ( $show_package_details ) : ?>
-			<?php echo '<p class="woocommerce-shipping-contents"><small>' . esc_html( $package_details ) . '</small></p>'; ?>
-		<?php endif; ?>
-
-		<?php if ( $show_shipping_calculator ) : ?>
-			<?php woocommerce_shipping_calculator( $calculator_text ); ?>
-		<?php endif; ?>
+		
 	</td>
+</tr>
+<?php if ( $available_methods ) : ?>
+<tr class="woocommerce-shipping-totals shipping">
+  <th>Shipping to</th>
+	<td>
+	<?php if ( is_cart() ) : ?>
+		<p class="woocommerce-shipping-destination">
+			<?php
+			if ( $formatted_destination ) {
+				// Translators: $s shipping destination.
+				$country = WC()->customer->get_shipping_country();
+				$state = WC()->customer->get_shipping_state();
+				$city = WC()->customer->get_shipping_city();
+				$postcode = WC()->customer->get_shipping_postcode();
+				$address = WC()->customer->get_shipping_address();
+				//printf( esc_html__( 'Shipping to %s.', 'woocommerce' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' );
+				echo "<strong>$address, $city, $state $postcode</strong>";
+				$calculator_text = esc_html__( 'Change address', 'woocommerce' );
+			} else {
+				echo wp_kses_post( apply_filters( 'woocommerce_shipping_estimate_html', __( 'Shipping options will be updated during checkout.', 'woocommerce' ) ) );
+			}
+			?>
+		</p>
+	<?php endif; ?>
+	</td>
+</tr>
+<?php endif; ?>
+
+<tr class="woocommerce-shipping-totals shipping">
+  <td colspan="2">
+    <?php if ( $show_package_details ) : ?>
+    <?php echo '<p class="woocommerce-shipping-contents"><small>' . esc_html( $package_details ) . '</small></p>'; ?>
+    <?php endif; ?>
+
+    <?php if ( $show_shipping_calculator ) : ?>
+      <?php woocommerce_shipping_calculator( $calculator_text ); ?>
+    <?php endif; ?>
+  </td>
 </tr>

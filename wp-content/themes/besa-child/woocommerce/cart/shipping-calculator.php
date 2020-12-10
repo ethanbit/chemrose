@@ -39,7 +39,7 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 		<?php endif; ?>
 		
 		<p class="form-row form-row-wide" id="calc_shipping_address_field">
-			<input type="text" name="calc_shipping_address" value="<?php echo esc_attr( WC()->customer->get_shipping_address() ); ?>" />
+			<input type="text" class="input-text" name="calc_shipping_address" value="<?php echo esc_attr( WC()->customer->get_shipping_address() ); ?>" />
 		</p>
 
 		<?php if ( apply_filters( 'woocommerce_shipping_calculator_enable_state', true ) ) : ?>
@@ -55,7 +55,6 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 					<?php
 				} elseif ( is_array( $states ) ) {
 					?>
-					<span>
 						<select name="calc_shipping_state" class="state_select" id="calc_shipping_state" data-placeholder="<?php esc_attr_e( 'State / County', 'woocommerce' ); ?>">
 							<option value=""><?php esc_html_e( 'Select an option&hellip;', 'woocommerce' ); ?></option>
 							<?php
@@ -64,7 +63,6 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 							}
 							?>
 						</select>
-					</span>
 					<?php
 				} else {
 					?>
