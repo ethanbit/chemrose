@@ -316,6 +316,7 @@ function api_getwishlist(WP_REST_Request $request)
         'slug' => $product->get_slug(),
         'status' => $product->get_status(),
         'sku' => $product->get_sku(),
+        'price' => $product->get_price(),
         'src' => $featured_img_url,
       ];
       $data[] = $arr;
@@ -349,6 +350,7 @@ function api_getwishlist_2($userID)
         'slug' => $product->get_slug(),
         'status' => $product->get_status(),
         'sku' => $product->get_sku(),
+        'price' => $product->get_price(),
         'src' => $featured_img_url,
       ];
       $data[] = $arr;
@@ -614,6 +616,7 @@ function api_orders(WP_REST_Request $request)
         $tmpProduct['sku'] = $product->get_sku();
         $tmpProduct['name'] = $product->get_name();
         $tmpProduct['slug'] = $product->get_slug();
+        $tmpProduct['price'] = $product->get_price();
         $tmpProduct['src'] = $featured_img_url;
         $tmpProduct['quantity'] = $item->get_quantity();
       }
@@ -1069,6 +1072,7 @@ function api_getproductcategory()
         'name' => $tmpProduct->get_title(),
         'slug' => $tmpProduct->get_slug(),
         'sku' => $tmpProduct->get_sku(),
+        'price' => $tmpProduct->get_price(),
         'src' => $featured_img_url ? $featured_img_url : ''
       ];
     }
@@ -1480,7 +1484,7 @@ function api_orderdetail($request)
 
     // $product_type = $product->get_type();
     $product_sku = $product->get_sku();
-    // $product_price = $product->get_price();
+    $product_price = $product->get_price();
     // $stock_quantity = $product->get_stock_quantity();
 
     $image = wp_get_attachment_image_src(
@@ -1490,6 +1494,7 @@ function api_orderdetail($request)
     $productTmp['id'] = $product_id;
     $productTmp['sku'] = $product_sku;
     $productTmp['qty'] = $quantity;
+    $productTmp['price'] = $product_price;
     $productTmp['images'] = $image[0];
 
     $products[] = $productTmp;
@@ -1775,9 +1780,10 @@ function api_getallproducts(){
 			'slug' => $p->post_name,
 			'src' => $featured_img_url ? $featured_img_url : '',
 			'sku' => $woo_product->get_sku(),
+			'price' => $woo_product->get_price(),
 			'categories' => $cat
 		];
-		//echo "<pre>"; print_r($product); echo "</pre>".__FILE__.": ".__LINE__."";
+		// echo "<pre>"; print_r($woo_product); echo "</pre>".__FILE__.": ".__LINE__."";
 	}
 	wp_send_json( $products, 200 );
 	wp_reset_postdata();
